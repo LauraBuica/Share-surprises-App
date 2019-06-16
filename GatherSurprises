@@ -1,0 +1,39 @@
+public final class GatherSurprises {
+	
+	ISurprize[] isurprize = new ISurprize[20];
+
+	private GatherSurprises() {
+	}
+
+	public static ISurprize gather() {
+		Random randomNo = new Random();
+		int number = randomNo.nextInt(3);
+
+		switch(number) {
+		case 1:
+			ISurprize s1 = new FortuneCookie("Noroc");
+			s1.enjoy();
+			break;
+		case 2:
+		ISurprize s2 = new MinionToy("Timy");
+			s2.enjoy();
+			break;
+		case 3:
+			ISurprize s3 = new Candies(2,"lemon");
+			s3.enjoy();
+			break;
+		}
+	}
+
+	public static ISurprize[] gather(int n) {
+		ISurprize[] array = new ISurprize[n];
+		int i = 0;
+		while(n>=0) {
+			ISurprize isurprize = gather();
+			array[i] = isurprize;
+			i++;
+			n--;
+		}
+		return array;
+	}
+}
