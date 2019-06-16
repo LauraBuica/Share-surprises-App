@@ -1,0 +1,11 @@
+public class GiveSurpriseAndSing extends AbstractGiveSurprises  {
+
+	public GiveSurpriseAndSing(String str, int waitTime) {
+		super(str, waitTime);
+	}
+
+	@Override
+	protected void giveWithPassion() {
+		System.out.println("Singing a nice song, full of joy and genuine excitement…");
+	}
+}
