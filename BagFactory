@@ -1,0 +1,19 @@
+	
+	public IBag makeBag(String type) {
+  
+		switch(type) {
+		case "LIFO":
+			IBag b1 = new LifoContainer();
+			return b1;
+		case "FIFO":
+			IBag b2 = new FifoContainer();
+			return b2;
+		case "RANDOM":
+			IBag b3 = new RandomContainer();
+			return b3;
+		default: 
+			System.out.println("Unknown");
+			return null;
+		}
+	}
+}
