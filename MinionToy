@@ -1,0 +1,30 @@
+public class MinionToy extends Surprize {
+	
+	private String name;
+	private static String[] minions = {"Dave", "Karl","Kevin","Stuart","Tim","Bob","Scarlett"};
+	private static int counter;
+	
+	public MinionToy(String name) {
+		this.name = name;
+	}
+	
+	private static void increment() {
+		counter++;
+	}
+	
+	@Override
+	public void enjoy() {
+		System.out.println("Numele minionului este : " + this.name);
+	}
+	
+	public static MinionToy generate() {
+		MinionToy t1 = new MinionToy(minions[counter]);
+		increment();
+		return t1;
+	}	
+	
+	@Override
+	public String toString() {
+		return "Numele minionului este : " + this.name;
+	}
+}
