@@ -1,0 +1,30 @@
+public class LifoContainer extends Bag {
+
+	private ArrayList<ISurprize> lifoSurList;
+
+	public LifoContainer() {
+		this.lifoSurList = new ArrayList<ISurprize>();
+	}
+
+	public void put(IBag bagOfSurprises) {
+		while(bagOfSurprises.size() != 0 ) {
+			ISurprize s = bagOfSurprises.takeOut();
+			this.lifoSurList.add(s);
+		}
+	}
+
+	public ISurprize takeOut() {
+		ISurprize takeOutSurprize = lifoSurList.get(lifoSurList.size()-1);
+		this.lifoSurList.remove(lifoSurList.size()-1);
+		return takeOutSurprize;
+	}
+
+	@Override
+	public String toString() {
+		for(int i=0; i<lifoSurList.size(); i++) {
+			System.out.println(lifoSurList.get(i).toString());
+		}
+
+		return "Size" + lifoSurList.size();
+	}
+}
