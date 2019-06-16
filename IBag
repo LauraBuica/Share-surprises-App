@@ -1,0 +1,12 @@
+public interface IBag {
+
+	void put(ISurprize newSurprise);
+
+	void put(IBag bagOfSurprises);
+
+	ISurprize takeOut();
+
+	boolean isEmpty();
+
+	int size();
+}
