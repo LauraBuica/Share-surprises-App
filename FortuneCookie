@@ -1,0 +1,45 @@
+public class FortuneCookie extends Surprize {
+
+	private String str;
+	private static String[] fortuneList = {"Taina existenţei umane nu constă în a trăi, ci în a şti pentru ce trăieşti. F.M. Dostoievski",
+	"În trei cuvinte pot să rezum tot ceea ce am învățat despre viață: merge mai departe. Robert Frost",
+	"Succesul este abilitatea de a trece de la un eșec la altul fără a pierde din entuziasm. Winston Churchill",
+	"Dacă vrei să cunoști un om cu adevărat, privește cum îi tratează pe cei inferiori, nu pe cei egali cu el. J.K. Rowling",
+	"Acceptă ce nu poți schimba dar schimbă ce nu poți accepta.",
+	"Dacă lupți poți să pierzi, dacă nu lupți ai pierdut deja.",
+	"Ne cunoaștem doar când ne aflăm în fața propriilor noastre limite. Paulo Coelho",
+	"Este simplu să fii fericit, dar este greu să fii simplu. Eckart von Hirschhausen",
+	"Poți avea totul fără să ai nimic și poți să nu ai nimic având totul. Mihai Eminescu",
+	 "Fii stăpân pe tine însuți și vei stăpânii lumea. Feodor Mihailovici Dostoievski",
+	"Cea mai mare greseala pe care o poate face cineva este sa ii fie frica sa greseasca. Elbert Hubbart",
+	"Când îți dorești ceva cu adevărat, tot universul conspiră pentru îndeplinirea visului tău. Paulo Coelho",
+	"Viitorul aparține celor care cred în frumusețea viselor lor. Eleanor Roosevelt",
+	"Viața noastră este rezultatul alegerilor pe care le facem, a da vina pe cei din jur, pe mediu, pe ceilalți factori exteriori, înseamnă a da acestor lucruri puterea de a ne controla.Stephen Covey",
+	"Zburând sus te faci nevăzut dar vezi. Nicolae Iorga",
+	"Fiecare om trebuie să îşi gaseasca timp, să se aşeze şi să privească caderea frunzelor. Elizabeth Lawrence",
+	 "Rareori ne gândim la ceea ce avem, dar mereu la ceea ce ne lipseşte. Schopenhauer",
+	 "Nu merită să plângi pentru nimeni, iar cei care merită nu te vor face să plângi. Gabriel Marquez",
+	 "Nu e nimic mai interesant decât să te întorci într-un loc care a rămas neschimbat ca să îti dai seama cât de mult te-ai schimbat tu. Nelson Mandela",
+	"Dacă vrei să fii fericit o clipă, razbună-te, dacă vrei să fii fericit o viață, iartă!"};
+
+	public FortuneCookie(String str) {
+		this.str = str;
+	}
+	
+	@Override
+	public void enjoy() {
+		System.out.println(str);
+	}
+	
+	public static FortuneCookie generate() {
+		Random randomNo = new Random();
+		int message = randomNo.nextInt(20);
+		FortuneCookie f1 = new FortuneCookie(fortuneList[message]);
+		return f1;
+	}
+	
+	@Override
+	public String toString() {
+		return this.str;
+	}
+}
