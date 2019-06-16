@@ -1,0 +1,32 @@
+public class RandomContainer extends Bag {
+
+	private ArrayList<ISurprize> randomSurList;
+
+	public RandomContainer() {
+		this.randomSurList = new ArrayList<ISurprize>();
+	}
+
+	public void put(IBag bagOfSurprises) {
+		while(bagOfSurprises.size() != 0 ) {
+			ISurprize s = bagOfSurprises.takeOut();
+			this.randomSurList.add(s);
+		}
+	}
+
+	public ISurprize takeOut() {
+		Random random = new Random();
+		int no = random.nextInt(randomSurList.size());
+		ISurprize takeOutSurprize = randomSurList.get(no);
+		this.randomSurList.remove(no);
+		return takeOutSurprize;
+	}
+
+	@Override
+	public String toString() {
+		for(int i=0; i<randomSurList.size(); i++) {
+			System.out.println(randomSurList.get(i).toString());
+		}
+		return "Size" + randomSurList.size();
+	}
+
+}
