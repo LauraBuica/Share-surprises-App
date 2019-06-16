@@ -1,0 +1,48 @@
+public abstract class AbstractGiveSurprises {
+
+	private IBag ibag;
+	
+	public AbstractGiveSurprises(String str, int waitTime) {
+		if(str.equalsIgnoreCase("LIFO")) {
+			ibag = new LifoContainer();
+		} else if(str.equalsIgnoreCase("FIFO")) {
+			ibag = new FifoContainer();
+		} else if(str.equalsIgnoreCase("RANDOM")) {
+			ibag = new RandomContainer();
+		} else {
+			System.out.print("Unknown");
+		}
+	}
+
+	public void put(ISurprize isurprize) {
+		ibag.put(isurprize);
+	}
+
+	public void put(IBag surprises) {
+		ibag.put(surprises);
+	}
+
+	public void give() {
+		ibag.takeOut().enjoy();
+		giveWithPassion();
+	}
+	
+	public void giveAll() {
+
+		for(int i=0;i<ibag.size();i++) {
+			give();
+			try {
+				TimeUnit.SECONDS.sleep(10); // number of seconds to sleep
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	boolean isEmpty() {
+		return ibag.isEmpty();
+	}
+
+	protected abstract void giveWithPassion();
+}
