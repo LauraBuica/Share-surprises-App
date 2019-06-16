@@ -1,0 +1,29 @@
+public class Candies extends Surprize  {
+	
+		private int noOfCandies;
+		private String candyType;
+		private static String[] candiesList = {"chocolate", "vanilla","strawberry","apple","melon","coffee","lemon"};
+		
+		public Candies(int noOfCandies, String candyType) {
+			this.noOfCandies = noOfCandies;
+			this.candyType = candyType;
+		}
+		
+		@Override
+		public void enjoy() {
+			System.out.println("Numarul de bomboane este: " + this.noOfCandies + " iar aroma este: " + this.candyType);
+		}
+		
+		public static Candies generate() {
+			Random randomNo = new Random();
+			int candyType = randomNo.nextInt(7);
+			int noOfCandies = randomNo.nextInt(20);
+			Candies c1 = new Candies(noOfCandies,candiesList[candyType]);
+			return c1;
+		}
+					
+		@Override
+		public String toString() {
+			return "Numarul de bomboane este: " + this.noOfCandies + " iar tipul acestora este "  + this.candyType;
+		}
+}
