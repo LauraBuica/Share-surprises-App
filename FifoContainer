@@ -1,0 +1,31 @@
+public class FifoContainer extends Bag {
+
+	private ArrayList<ISurprize> fifoSurList;
+
+	public FifoContainer() {
+		this.fifoSurList = new ArrayList<ISurprize>();
+	}
+
+	public void put(IBag bagOfSurprises) {
+		while(bagOfSurprises.size() != 0 ) {
+			ISurprize moveSurprize = bagOfSurprises.takeOut();
+			this.fifoSurList.add(moveSurprize);
+		}
+	}
+
+	public ISurprize takeOut() {
+		ISurprize takeOutSurprize = fifoSurList.get(0);
+		this.fifoSurList.remove(0);
+		return takeOutSurprize;
+	}
+
+	@Override
+	public String toString() {
+		for(int i=0; i<fifoSurList.size(); i++) {
+			System.out.println(fifoSurList.get(i).toString());
+		}
+
+		return "Size" + fifoSurList.size();
+	}
+
+}
