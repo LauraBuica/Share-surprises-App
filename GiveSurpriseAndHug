@@ -1,0 +1,10 @@
+public class GiveSurpriseAndHug  extends AbstractGiveSurprises {
+
+	public GiveSurpriseAndHug(String str, int waitTime) {
+		super(str, waitTime);
+	}
+
+	protected void giveWithPassion() {
+		System.out.println("Warm wishes and a big hug!");
+	}
+}
