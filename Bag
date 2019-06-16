@@ -1,0 +1,21 @@
+public abstract class Bag implements IBag {
+	
+	private ArrayList<ISurprize> list;
+  
+  @Override
+	public void put(ISurprize newSurprise) {
+		this.list.add(newSurprise);
+	}
+  
+	@Override
+  public boolean isEmpty() {
+		if(list.size() == 0) {
+			return true;
+		}
+		return false;
+	}
+  @Override
+	public int size() {
+		return list.size();
+	}
+}
